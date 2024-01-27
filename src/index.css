@@ -1,13 +1,85 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: white !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*NavBar*/
+.p-menubar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/*banner*/
+.div-con-fondo {
+  width: 100%;
+  height: auto; /* Ajusta la altura según tus necesidades */
+  background-image: url('wave.svg'); /* URL del archivo SVG */
+  background-size: cover; /* Ajusta el tamaño para cubrir todo el elemento */
+  background-position: initial; /* Centra el fondo */
+  padding: 0 2rem 10rem 2rem ;
+}
+.div-banner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .div-banner{
+    grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  }
+}
+
+.content-banner{
+  flex: 1;
+  padding: 0 3rem 0 3rem;
+}
+
+.vector{
+  text-align: center;
+  padding: 2.5rem;
+}
+.vector img{
+  width: 70%;
+}
+
+.banner-message h2{
+  font-size: 35px;
+}
+
+.banner-word{
+  color: #CCA43B;
+  display: block;
+}
+
+.banner-text{
+  color: #E5E5E5;
+  font-size: 14px;
+}
+
+
+/*Footer*/
+.footer-div{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #242F40;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+@media screen and (max-width: 960px) {
+  .footer-div{
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-div p{
+  font-size: small;
+  margin: 0 2rem 0 1rem;
 }
