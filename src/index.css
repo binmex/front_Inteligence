@@ -62,9 +62,6 @@ body {
 
 /*Footer*/
 .footer-div{
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #242F40;
   padding: 20px;
