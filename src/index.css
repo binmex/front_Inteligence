@@ -13,7 +13,7 @@ body {
 .div-con-fondo {
   width: 100%;
   height: auto; /* Ajusta la altura según tus necesidades */
-  background-image: url('wave.svg'); /* URL del archivo SVG */
+  background-image: url('./Assets/wave.svg'); /* URL del archivo SVG */
   background-size: cover; /* Ajusta el tamaño para cubrir todo el elemento */
   background-position: initial; /* Centra el fondo */
   padding: 0 2rem 10rem 2rem ;
