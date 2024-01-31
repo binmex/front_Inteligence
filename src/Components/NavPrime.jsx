@@ -4,7 +4,7 @@ import { Badge } from "primereact/badge";
 
 export const NavPrime = () => {
   const itemRenderer = (item) => (
-    <a className="flex align-items-center p-menuitem-link">
+    <a className="flex align-items-center p-menuitem-link" href="">
       <span className={item.icon} />
       <span className="mx-2">{item.label}</span>
       {item.badge && <Badge className="ml-auto" value={item.badge} />}
