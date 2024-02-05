@@ -80,3 +80,25 @@ body {
   font-size: small;
   margin: 0 2rem 0 1rem;
 }
+.card{
+  width: 100%;
+  align-items: center;
+}
+.div-bannerCentro{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  margin-top: 10px; 
+
+}
+.colorpicked{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.editor-container {
+  margin-top: 30px; 
+}
