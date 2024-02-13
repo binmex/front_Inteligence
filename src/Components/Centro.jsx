@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import { Steps } from 'primereact/steps';
-import { Button } from 'primereact/button';
+import { Button } from 'primereact/button'
 import { Editor } from "primereact/editor";
 
 import { ColorPicker } from 'primereact/colorpicker';
@@ -53,10 +53,27 @@ export const Centro= () => {
                 <div className='colorpicked'>
                     
                 <ColorPicker value={color} onChange={(e) => setColor(e.value)} inline/> 
+                <ColorPicker disabled  /> 
+                <ColorPicker  disabled /> 
+                <ColorPicker   disabled /> 
+                <ColorPicker  disabled  /> 
+                <ColorPicker   disabled /> 
+                
+                <Button label="Validar " raised />
+           
+                <Button label="Aceptar" severity="success" raised disabled />
 
                 
                     
                 </div>
+                <div className="Botones">
+                 
+            
+          
+            
+            
+        </div>
+                
                 
                 
                 

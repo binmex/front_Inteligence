@@ -82,22 +82,33 @@ body {
 }
 .card{
   width: 100%;
-  align-items: center;
+  margin: 0 auto; /* Alinea horizontalmente en el centro */
+  
+  
 }
+
+
 .div-bannerCentro{
-  width: 100%;
-  display: grid;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+@media screen and (max-width: 270px) {
+  .div-bannerCentro{
+    height: auto;
+    width: auto;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  align-items: center;
-  margin-top: 10px; 
-
+  }
 }
 .colorpicked{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  gap: 15px;
 }
 .editor-container {
   margin-top: 30px; 
