@@ -12,7 +12,7 @@ function App() {
         <NavPrime />
         <BannerPrime />
         <Centro />
-        <InteriorDesignComponent />
+     
       </div>
       <FooterPrime />
     </>
