@@ -37,7 +37,8 @@ export const Centro = () => {
                 <Button outlined={activeIndex !== 0} rounded label="1" onClick={() => setActiveIndex(0)} />
                 <Button outlined={activeIndex !== 1} rounded label="2" onClick={() => setActiveIndex(1)} />
                 <Button outlined={activeIndex !== 2} rounded label="3" onClick={() => setActiveIndex(2)} />
-                <Button outlined={activeIndex !== 2} rounded label="4" onClick={() => setActiveIndex(3)} />
+                <Button outlined={activeIndex !== 3} rounded label="4" onClick={() => setActiveIndex(3)} />
+                
 
                 <Steps className='steps' model={items} activeIndex={activeIndex} />
 
@@ -65,9 +66,9 @@ export const Centro = () => {
 
 
                 <div className='buttonContent'>
-                    <Button label="Validar " raised />
+                    <Button label="Validar " />
 
-                    <Button label="Aceptar" severity="success" raised disabled />
+                    <Button label="Aceptar" severity="success" disabled />
                 </div>
 
 
