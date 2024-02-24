@@ -7,20 +7,17 @@ export const BannerPrime = () => {
       <div className="content-banner">
         <div className="banner-message">
           <h2>
-            Now You Can{" "}
+            Ahora tu puedes{" "}
             <span className="banner-word">
-              Create A Bedroom
+              Crear tu habitacion
             </span>{" "}
-            Using IA
+            Usando IA
           </h2>
         </div>
 
         <div className="banner-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-            fuga maxime sequi, facere eum magnam nemo voluptatibus explicabo
-            earum minima? Voluptate est, dolores velit explicabo eaque quaerat
-            rerum quia nostrum.
+          Bienvenido a nuestro creador de diseños de habitaciones. Con nuestra potente inteligencia artificial, podrás visualizar y personalizar tus espacios de descanso de una manera completamente nueva. 
           </p>
         </div>
       </div>

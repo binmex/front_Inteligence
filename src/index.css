@@ -127,3 +127,7 @@ body {
   font-size: small;
   margin: 0 2rem 0 1rem;
 }
+.p-button.p-button-success{
+  background: #06f146;
+}
+
