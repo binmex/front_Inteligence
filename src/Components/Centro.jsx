@@ -47,7 +47,7 @@ export const Centro = () => {
 
 
             <div className="editor-container">
-                <Editor value={text} onTextChange={(e) => setText(e.htmlValue)} />
+                <Editor value={text} onTextChange={(e) => setText(e.htmlValue)} style={{ height: '180px' }} />
             </div>
 
             <div>
