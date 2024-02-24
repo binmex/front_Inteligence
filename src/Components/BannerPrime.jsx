@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../Assets/logoCafe.svg'
+import logo from '../Assets/robot.svg'
 
 export const BannerPrime = () => {
   return (
