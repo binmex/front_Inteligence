@@ -38,6 +38,20 @@ export const Centro = () => {
         }
     ];
 
+    const generatePalete = async() => {
+        const response = await fetch(`${API_URL}/colormind`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ color: color })
+        })
+        const data = await response.json()
+        setDataColors(data.data)
+        console.log(`data colors: ${dataColors.color1}`)
+
+    }
+
 
     const handleClick = async (e) => {
         setLoading(true)
@@ -52,8 +66,19 @@ export const Centro = () => {
                 body: JSON.stringify({ text: text }),
             });
             const data = await response.json();
+            generatePalete();
 
-            data.sentiment.vote === "positive" ? setPromptvalidate(true) : alert(`prompt no valido: ${data.sentiment.vote} prompt: ${text}`)
+            console.log(data);
+            
+            if(data.state){
+                //activar boton de submit
+                setPromptvalidate(true)
+            }else{
+                //mostrar una alerta personalizada
+                alert(`promp no valido, cambie las siguientes palabras:  ${data.data}`)
+            }
+
+            //data.sentiment.vote === "positive" ? setPromptvalidate(true) : alert(`prompt no valido: ${data.sentiment.vote} prompt: ${text}`)
 
 
 
@@ -65,38 +90,23 @@ export const Centro = () => {
         }
     }
     const convertColorToRGBArray = (color) => {
-
         const colorrgb = hexToRgb(color)
         console.log(`color rgb = ${colorrgb}`)
         setColor(colorrgb)
         return colorrgb
     }
     const handleSubmit = async (e) => {
-        console.log(`color update = ${color}`)
-
-        const response = await fetch(`${API_URL}/colormind`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ color: color })
-        })
-        console.log(response)
-        const data = await response.json()
-        console.log(data.data)
-        setDataColors(data.data)
-        console.log(`data colors: ${dataColors.color1}`)
-
         try{
             const response = await fetch(`${API_URL}/prodia`, {
                 method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ prompUser:`${text} whit colors: ${dataColors.color1}, ${dataColors.color2}, ${dataColors.color3}, ${dataColors.color4}, ${dataColors.color5}  ` }),
+              body: JSON.stringify({ prompUser:`genera una habitacion realista con ${text} y que tenga unicamente las siguientes tonalidades RGB:  [ ${dataColors.color1}, ${dataColors.color2}, ${dataColors.color3}, ${dataColors.color4}, ${dataColors.color5} ] minimo usa 3 tonalidades proporcionadas anteriormente.` }),
             });
             const data = await response.json();
             console.log(data);
+            console.log(dataColors.color1)
             setRoomDesign(data.data.imageUrl);
         }
         catch (error) {
@@ -104,8 +114,6 @@ export const Centro = () => {
         }finally{
             
         }
-        
-
     }
 
     return (
