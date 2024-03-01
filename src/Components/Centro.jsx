@@ -13,15 +13,9 @@ export const Centro = () => {
     const [color, setColor] = useState(null);
     const [loading, setLoading] = useState(false)
     const [promptvalidate, setPromptvalidate] = useState(false)
-    // const [colorsPickedColormind, setColorsPickedColormind] = useState({
-    //     color1: { r: 0, g: 0, b: 0 },
-    //     color2: { r: 0, g: 0, b: 0 },
-    //     color3: { r: 0, g: 0, b: 0 },
-    //     color4: { r: 0, g: 0, b: 0 },
-    //     color5: { r: 0, g: 0, b: 0 }
-    // })
     const [roomDesign, setRoomDesign] = useState("");
     const [dataColors, setDataColors] = useState({})
+    const [generatingImage, setGeneratingImage] = useState(false);
 
     const items = [
         {
@@ -48,15 +42,13 @@ export const Centro = () => {
         })
         const data = await response.json()
         setDataColors(data.data)
-        console.log(`data colors: ${dataColors.color1}`)
+        
 
     }
 
 
     const handleClick = async (e) => {
         setLoading(true)
-        console.log(`the color is: ${color}`)
-
         try {
             const response = await fetch(`${API_URL}/nlp/validate`, {
                 method: "POST",
@@ -66,15 +58,10 @@ export const Centro = () => {
                 body: JSON.stringify({ text: text }),
             });
             const data = await response.json();
-            generatePalete();
-
-            console.log(data);
-            
+            generatePalete();            
             if(data.state){
-                //activar boton de submit
                 setPromptvalidate(true)
             }else{
-                //mostrar una alerta personalizada
                 alert(`promp no valido, cambie las siguientes palabras:  ${data.data}`)
             }
 
@@ -96,6 +83,7 @@ export const Centro = () => {
         return colorrgb
     }
     const handleSubmit = async (e) => {
+        setGeneratingImage(true)
         try{
             const response = await fetch(`${API_URL}/prodia`, {
                 method: "POST",
@@ -105,14 +93,12 @@ export const Centro = () => {
               body: JSON.stringify({ prompUser:`genera una habitacion realista con ${text} y que tenga unicamente las siguientes tonalidades RGB:  [ ${dataColors.color1}, ${dataColors.color2}, ${dataColors.color3}, ${dataColors.color4}, ${dataColors.color5} ] minimo usa 3 tonalidades proporcionadas anteriormente.` }),
             });
             const data = await response.json();
-            console.log(data);
-            console.log(dataColors.color1)
             setRoomDesign(data.data.imageUrl);
         }
         catch (error) {
             console.log(error);
         }finally{
-            
+            setGeneratingImage(false)
         }
     }
 
@@ -162,7 +148,7 @@ export const Centro = () => {
                 <div className='buttonContent'>
                     <Button disabled={loading} onClick={handleClick} label="Validar " />
 
-                    <Button label="Aceptar" severity="success" disabled={!promptvalidate} onClick={handleSubmit} />
+                    <Button label={generatingImage ? "Generando diseño ": "Aceptar"} severity="success" disabled={!promptvalidate || generatingImage} onClick={handleSubmit} />
                 </div>
                 <div className='room_img'>
                 {roomDesign !== "" && <img src={roomDesign} alt="room design" />}
@@ -170,14 +156,6 @@ export const Centro = () => {
 
 
             </div>
-
-
-
-
-
-
-
-
         </div>
 
     )
