@@ -13,12 +13,12 @@ body {
 .div-con-fondo {
   width: 100%;
   height: auto; /* Ajusta la altura según tus necesidades */
-  background-image: url('./Assets/wave.svg'); /* URL del archivo SVG */
+  background-image: url("./Assets/wave.svg"); /* URL del archivo SVG */
   background-size: cover; /* Ajusta el tamaño para cubrir todo el elemento */
   background-position: initial; /* Centra el fondo */
-  padding: 0 2rem 10rem 2rem ;
+  padding: 0 2rem 10rem 2rem;
 }
-.div-banner{
+.div-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -26,109 +26,169 @@ body {
 }
 
 @media screen and (max-width: 960px) {
-  .div-banner{
+  .div-banner {
     grid-template-columns: 1fr;
-  grid-template-rows: auto;
+    grid-template-rows: auto;
   }
 }
 
-.content-banner{
+.content-banner {
   flex: 1;
   padding: 0 3rem 0 3rem;
 }
 
-.vector{
+.vector {
   text-align: center;
   padding: 2.5rem;
 }
-.vector img{
+.vector img {
   width: 70%;
 }
 
-.banner-message h2{
+.banner-message h2 {
   max-width: 100%;
 }
 
-.banner-word{
-  color: #CCA43B;
+.banner-word {
+  color: #cca43b;
   display: block;
 }
 
-.banner-text{
-  color: #E5E5E5;
+.banner-text {
+  color: #e5e5e5;
   font-size: 14px;
 }
 /*CONTENT*/
 
-.p-steps ol{
+.p-steps ol {
   padding-top: 2rem;
   margin-bottom: 3rem;
 }
 
-.divColor{
+.p-steps .p-steps-item {
+  height: auto !important;
+  line-height: 1.5;
+  max-width: 100% !important;
+}
+
+/* Ajusta la altura de los pasos */
+.p-steps .p-steps-item .p-steps-number {
+  height: auto !important;
+  line-height: 1.5;
+}
+
+/* Ajusta el texto de los pasos */
+.p-steps .p-steps-item .p-steps-title {
+  white-space: normal !important;
+  text-align: center;
+}
+
+.divColor {
   margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
 }
-.buttonContent{
+.buttonContent {
   margin-top: 2rem;
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
-.colorpicked{
+.colorpicked {
   display: grid;
   margin-left: 1rem;
-  
 }
 
 @media screen and (max-width: 960px) {
-  .colorpicked{
+  .colorpicked {
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    
+    margin-top: 1.5rem;
   }
-  .p-steps ol{
+  .p-steps ol {
     max-width: 100%;
     align-content: center;
     flex-wrap: wrap;
     flex-direction: column;
   }
-  .divColor{
+  .divColor {
     flex-direction: column;
   }
-  .p-colorpicker{
+  .p-colorpicker {
     display: flex;
     justify-content: space-around;
     margin-top: 3rem;
   }
 }
 
+/*Imagen*/
+.room_img {
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 960px) {
+  .room_img {
+    width: 100%;
+  }
+
+  .room_img__image {
+    width: 100%;
+  }
+}
 
 /*Footer*/
-.footer-div{
+.footer-div {
   width: 100%;
-  background-color: #242F40;
+  background-color: #242f40;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   align-items: center;
+  color: #fff;
 }
+
 @media screen and (max-width: 960px) {
-  .footer-div{
+  .footer-div {
     grid-template-columns: 1fr;
   }
 }
 
-.footer-div p{
-  font-size: small;
-  margin: 0 2rem 0 1rem;
+.footer-div h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-.p-button.p-button-success{
-  background: #06f146;
+
+.footer-div p {
+  font-size: 0.875rem;
+  margin: 0 1rem 0 0;
+  line-height: 1.5;
+}
+
+.footer-div .logo-info {
+  padding-right: 1rem;
+}
+
+.footer-div .more-info {
+  padding-left: 1rem;
+}
+
+.footer-div a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-div a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/*Colores botones*/
+.p-button.p-button-success {
+  background: #5FB925;
 }
 
 .colorBox {
@@ -136,10 +196,9 @@ body {
   height: 30px;
   border: 1px solid #000;
   border-radius: 5px;
-  margin-right: 10px; 
-  
+  margin-right: 10px;
 }
-.room_img{
+.room_img {
   display: flex;
   justify-content: center;
   align-items: center;
