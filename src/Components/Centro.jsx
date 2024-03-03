@@ -83,7 +83,8 @@ export const Centro = () => {
           setShowMessage(true);
         }
       } catch (error) {
-        console.log(error);
+        setWordsNoFound('Failed to fetch')
+        setShowMessage(true)
       }
     }
     setLoading(false);
