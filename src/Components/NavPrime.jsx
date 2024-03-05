@@ -3,16 +3,6 @@ import { Menubar } from "primereact/menubar";
 import logoUptc from '../Assets/LogoUptc.svg'
 
 export const NavPrime = () => {
-  const items = [
-    {
-      label: "Home",
-      icon: "pi pi-home",
-    },
-    {
-      label: "Creators",
-      icon: "pi pi-star",
-    }
-  ];
   
   //logo
   const start = (
@@ -24,10 +14,9 @@ export const NavPrime = () => {
     ></img>
   );
 
-
   return (
     <div className="card">
-      <Menubar model={items} start={start} />
+      <Menubar start={start} />
     </div>
   );
 };

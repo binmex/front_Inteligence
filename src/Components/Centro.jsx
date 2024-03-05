@@ -161,12 +161,12 @@ export const Centro = () => {
           <Button
             disabled={loading}
             onClick={handleClick}
-            label="Validar "
+            label="Validar promp y generar paleta"
             severity="info"
           />
 
           <Button
-            label={generatingImage ? "Generando diseño " : "Aceptar"}
+            label={generatingImage ? "Generando diseño " : "Generar Imagen"}
             severity="success"
             disabled={!promptvalidate || generatingImage}
             onClick={handleSubmit}
