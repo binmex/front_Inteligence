@@ -7,7 +7,7 @@ const StepsIA = () => {
 
   const items = [
     {
-      label: "Ingresa Descripcion de tu habitacion, Intenta que sea lo menos hambiguo posible",
+      label: "Ingresa Descripcion de tu habitacion, Intenta que sea lo menos ambiguo posible",
     },
     {
       label: "Seleccion un tono, es posible que no tome todos los colores generados",
