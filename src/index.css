@@ -182,13 +182,9 @@ body {
   text-decoration: underline;
 }
 
-
-
-
-
 /*Colores botones*/
 .p-button.p-button-success {
-  background: #5FB925;
+  background: #5fb925;
 }
 
 .colorBox {
@@ -203,4 +199,12 @@ body {
   justify-content: center;
   align-items: center;
   padding: 15px;
+}
+
+/**modify button aceptar y validar*/
+.p-button.p-button-info,
+.p-buttonset.p-button-info > .p-button,
+.p-fileupload-choose.p-button-info,
+.p-splitbutton.p-button-info > .p-button {
+  margin-right: 1rem;
 }
