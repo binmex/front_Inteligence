@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:4000';
+export const API_URL = 'https://proyect-inteligence-wine.vercel.app/';
 
 export function hexToRgb(hex) {
         
