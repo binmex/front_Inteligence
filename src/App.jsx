@@ -3,7 +3,6 @@ import { NavPrime } from "./Components/NavPrime";
 import { BannerPrime } from "./Components/BannerPrime";
 import { FooterPrime } from "./Components/FooterPrime";
 import { Centro } from "./Components/Centro";
-import InteriorDesignComponent from "./Components/InteriorDesignComponent";
 
 function App() {
   return (
